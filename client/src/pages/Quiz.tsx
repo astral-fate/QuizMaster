@@ -51,7 +51,223 @@ const Quiz = () => {
       correct: 1,
       explanation: "Invalid JSON format: missing enclosing braces, duplicate keys, and incorrect formatting"
     },
-    // ... [rest of the questions array continues with all 19 questions] ...
+    {
+      id: 4,
+      question: 'JSON Document Validation',
+      code: `{
+  "fname": "Ali",
+  "minit": 'n',
+  "lname": "Mohamed",
+  "ssn": "1123411102",
+  "salary": 56000.00
+}`,
+      options: ['Correct', 'Not correct'],
+      correct: 1,
+      explanation: "Single quotes are not valid in JSON - must use double quotes"
+    },
+    {
+      id: 5,
+      question: 'JSON Document Validation',
+      code: `{
+  "ssn": 523,
+  "address": "Cairo",
+  "Address": "Giza",
+}`,
+      options: ['Correct', 'Not correct'],
+      correct: 1,
+      explanation: "Invalid JSON due to trailing comma after last property"
+    },
+    {
+      id: 6,
+      question: 'MongoDB Filter Validity',
+      code: 'Which of the following is not a valid MongoDB filter?',
+      options: [
+        '{ "dno": {$gte: 14, $lte: 16} }',
+        '{ $and: [{"dno": 14}, {salary: 7.5}] }',
+        '{ $or: [{"dno": {$gte: 14, $lte: 16}}, {salary: 7.5}] }',
+        'None of the above'
+      ],
+      correct: 3,
+      explanation: "All listed filters are valid MongoDB queries"
+    },
+    {
+      id: 7,
+      question: 'MongoDB Filter Representation',
+      code: '{Sand: [{"dno": {Snot: {Seq: 8}}}, {"month": {Shin: [5, 9, 10]}}, {"gender": "F"}]}',
+      options: [
+        'dno != 8 and month is not in {5, 9, 10} and gender = F',
+        'dno != 8 and month is in {5, 9, 10} and gender = F',
+        'dno = 8 and month is not in {5, 9, 10} and gender = F',
+        'None of the above'
+      ],
+      correct: 3,
+      explanation: "The filter uses invalid operators 'Sand', 'Snot', 'Seq', and 'Shin' instead of proper MongoDB operators"
+    },
+    {
+      id: 8,
+      question: 'JSON Document Validation',
+      code: `"ssn": "112341102"
+"bdate": DATE("1968-01-12")
+"address": "2342 May", "Atlanta", "GA"
+"salary": 46500.00,
+"superssn": "11541100"`,
+      options: ['Correct', 'Not correct'],
+      correct: 1,
+      explanation: "Invalid JSON format: missing enclosing braces, DATE() is not valid JSON, and incorrect array formatting"
+    },
+    {
+      id: 9,
+      question: 'MongoDB Filter Representation',
+      code: '{ "day": {Sgte: 14, $lte: 16} }',
+      options: [
+        'day > 14 and day <= 16',
+        'day >= 14 and day < 16',
+        'day >= 14 and day <= 16',
+        'None of the above'
+      ],
+      correct: 3,
+      explanation: "The filter uses invalid operator 'Sgte' instead of '$gte'"
+    },
+    {
+      id: 10,
+      question: 'MongoDB Filter Validity',
+      options: [
+        '{ $or: [{"dno": {$gte: 14, $lte: 16}}, {salary: 25000}] }',
+        '{ $or: [{"dno": {$gte: 14, 16}}, {salary, $lte: 25000}] }',
+        '{ $or: [{"dno": {14, $lte: 16}}, {$gte: 25000}] }',
+        'None of the above'
+      ],
+      correct: 0,
+      explanation: "Only the first option is a valid MongoDB filter with correct operator syntax"
+    },
+    {
+      id: 11,
+      question: 'JSON Document Validation',
+      code: `{
+  "fname": "Justin",
+  "lname": "Mark",
+  "ssn": "11341102",
+  "salary": 4070.00,
+  "superssn": "1117600",
+  "phone": 12345,
+  "phone": 7998710
+}`,
+      options: ['Correct', 'Not correct'],
+      correct: 1,
+      explanation: "Invalid JSON due to duplicate 'phone' key"
+    },
+    {
+      id: 12,
+      question: 'MongoDB Filter Representation',
+      code: '{$or: [{"day": {$gt: 12, $ltc: 15}}, {"hour": 56.5}]}',
+      options: [
+        'day <= 15 and day >= 12 or hour = 56.5',
+        '(day <= 15 and day > 12) or hour = 56.5',
+        'day <= 15 or day > 12 or hour = 56.5',
+        'None of the above'
+      ],
+      correct: 3,
+      explanation: "The filter uses invalid operator '$ltc' instead of '$lt' or '$lte'"
+    },
+    {
+      id: 13,
+      question: 'JSON Document Validation',
+      code: `{
+  "fname": "Justin",
+  "Iname": "Mark",
+  "ssn": "111111102",
+  "salary": 40000.00,
+  "superssn": "111111100",
+  "phone": 12345,
+  "is a manager": TRUE
+}`,
+      options: ['Correct', 'Not correct'],
+      correct: 1,
+      explanation: "Invalid JSON: space in key name 'is a manager' and TRUE should be lowercase true"
+    },
+    {
+      id: 14,
+      question: 'JSON Document Validation',
+      code: `{
+  "fname": "Justin",
+  "Iname": "Mark",
+  "ssn": "11341102",
+  "salary": 4070.00,
+  "superssn": "1117600",
+  "phone": 12345,
+}`,
+      options: ['Correct', 'Not correct'],
+      correct: 1,
+      explanation: "Invalid JSON due to trailing comma after last property"
+    },
+    {
+      id: 15,
+      question: 'JSON Document Validation',
+      code: `{
+  "fname": "Mohamed",
+  "lname": "Mahmod",
+  "ssn": "11165102",
+  "salary": 4600.00,
+  "superssn": "761100",
+  "dno": NULL,
+  "phone": 12345,
+}`,
+      options: ['Correct', 'Not correct'],
+      correct: 1,
+      explanation: "Invalid JSON: NULL should be lowercase null and there's a trailing comma"
+    },
+    {
+      id: 16,
+      question: 'JSON Document Validation',
+      code: `{
+  "ssn": "112341102",
+  "bdate": DATE("1968-01-12"),
+  "address": "2342 May", "Atlanta", "GA",
+  "salary": 46500.00,
+  "superssn": "11541100",
+}`,
+      options: ['Correct', 'Not correct'],
+      correct: 1,
+      explanation: "Invalid JSON: DATE() is not valid JSON, incorrect array formatting, and trailing comma"
+    },
+    {
+      id: 17,
+      question: 'MongoDB Filter Representation',
+      code: '{ "day": {Sgtc: 14, Slte: 16} }',
+      options: [
+        'day > 14 and day <= 16',
+        'day >= 14 and day < 16',
+        'day >= 14 and day <= 16',
+        'None of the above'
+      ],
+      correct: 3,
+      explanation: "The filter uses invalid operators 'Sgtc' and 'Slte' instead of '$gte' and '$lte'"
+    },
+    {
+      id: 18,
+      question: 'MongoDB Filter Validity',
+      options: [
+        '{ $or: [{"dno": {$gte: 14, $lte: 16}}, {salary: 25000}] }',
+        '{ $or: [{"dno": {$gte: 14, 16}}, {salary, $lte: 25000}] }',
+        '{ $or: [{"dno": {14, $lte: 16}}, {$gte: 25000}] }',
+        'None of the above'
+      ],
+      correct: 0,
+      explanation: "Only the first option is a valid MongoDB filter with correct operator syntax"
+    },
+    {
+      id: 19,
+      question: 'Runtime Error',
+      code: 'Runtime error 217 at 0040A300',
+      options: [
+        'Memory access violation',
+        'Division by zero',
+        'Invalid operation',
+        'None of the above'
+      ],
+      correct: 0,
+      explanation: "Runtime error 217 typically indicates a memory access violation"
+    }
   ];
 
   const handleAnswer = (optionIndex: number) => {
@@ -134,7 +350,7 @@ const Quiz = () => {
                 </pre>
               )}
             </div>
-            
+
             <div className="space-y-2">
               {question.options.map((option, index) => (
                 <Button
