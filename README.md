@@ -1,5 +1,2 @@
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
+git clone <your-repository-url>
+cd <repository-name>
